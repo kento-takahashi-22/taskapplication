@@ -1,0 +1,31 @@
+<p>details works!</p>
+
+<div *ngIf="task">
+    <h2>{{task.title}} Details</h2>
+    <div><span>id: </span>{{task.taskId}}</div>
+    <div>
+      <label>category:
+        <select [(ngModel)]="task.category">
+            <option *ngFor="let category of categories">
+            {{category.category}}
+            </option> 
+        </select>
+      </label> <br>
+      <label>title:
+        <input [(ngModel)]="task.title" placeholder="title"/>
+      </label> <br>
+      <label>user:
+        <select [(ngModel)]="task.user">
+            <option *ngFor="let user of users">
+            {{user.user}}
+            </option> 
+        </select>      </label> <br>
+      <label>memo:
+        <textarea [(ngModel)]="task.memo" placeholder="memo"></textarea>
+      </label>
+    </div>
+    <button (click)="goBack()">go back</button>
+    <button (click)="save()">save</button>
+    <!-- saveは未実装   -->
+</div>
+

@@ -1,0 +1,19 @@
+<h2>タスク一覧</h2>
+
+<ul class="tasks"> id - category - title - user
+    <span *ngFor="let task of tasks">
+        <li *ngIf="task.isDone === false">
+            <a routerLink="/detail/{{task.taskId}}">
+            {{task.taskId}} -
+            {{task.category}} -
+            {{task.title}} -
+            {{task.user}}
+            </a>
+            <button class="done" title="task done" (click)="done(task)">done!!</button>
+        </li>
+    </span> 
+</ul>
+
+<app-add-tasks></app-add-tasks>
+
+

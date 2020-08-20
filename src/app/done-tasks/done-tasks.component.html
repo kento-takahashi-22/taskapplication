@@ -1,0 +1,13 @@
+<h2>完了タスク一覧</h2>
+
+<ul class="tasks"> id - category - title - user
+    <span *ngFor="let task of tasks">
+        <li *ngIf="task.isDone === true">
+            {{task.taskId}} -
+            {{task.category}} -
+            {{task.title}} -
+            {{task.user}}
+            <button class="notDone" title="not done" (click)="notDone(task)">Not Done...</button>
+        </li>
+    </span> 
+</ul>

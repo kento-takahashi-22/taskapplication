@@ -1,0 +1,26 @@
+<h2>タスク追加</h2>
+
+
+<div>
+    <label>category:
+      <select #taskCategory>
+        <option *ngFor="let category of categories">
+            {{category.category}}
+        </option> 
+      </select>
+    </label> <br>
+    <label>title:
+      <input #taskTitle placeholder="title"/>
+    </label> <br>
+    <label>user:
+      <select #taskUser>
+          <option *ngFor="let user of users">
+          {{user.user}}
+          </option> 
+      </select>
+    </label> <br>
+    <label>memo:
+      <textarea #taskMemo placeholder="memo"></textarea>
+    </label> <br> <br>
+    <button (click)="add()">追加</button>
+</div>
